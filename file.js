@@ -2,10 +2,8 @@ var fs=require('fs');
 //synchronous method
 var readMe=fs.readFileSync('text.xml');
 
-console.log(readMe.toString().split());
-// var parser=new DOMParser();
-// var xmlDoc=parser.parseFromString(xml,'text/xml');
-// console.log(xmlDoc.getElementsByTagName('xml'));
+console.log(readMe.toString().split("</mpqs>"));
+
 const readLastLines=require('read-last-lines');
 readLastLines.read('text.xml',5)
 .then((lines)=>console.log(lines));
